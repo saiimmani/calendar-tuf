@@ -15,6 +15,8 @@ const HOLIDAYS: Record<string, string> = {
   "12-25": "Christmas",
 };
 
+const BASE_PATH = process.env.NODE_ENV === "production" ? "/calendar-tuf" : "";
+
 function startOfMonth(date: Date) {
   return new Date(date.getFullYear(), date.getMonth(), 1);
 }
@@ -301,7 +303,7 @@ export default function Home() {
 
             <div className="absolute inset-0">
               <Image
-                src="/hero.png"
+                src={`${BASE_PATH}/hero.png`}
                 alt="Climber on snowy mountain"
                 fill
                 priority
