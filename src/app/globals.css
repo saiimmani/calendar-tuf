@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --background: #dce4ea;
+  --foreground: #1f2937;
+  --paper: #f8fcff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
+  --font-sans: var(--font-jakarta);
+  --font-serif: var(--font-fraunces);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  background-image: radial-gradient(circle at 15% 20%, #f7fbff 0%, transparent 34%),
+    radial-gradient(circle at 85% 82%, #c9d9e5 0%, transparent 42%),
+    linear-gradient(145deg, #dce4ea 0%, #c8d4dd 100%);
+  font-family: var(--font-jakarta), sans-serif;
+}
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.spiral-ring {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid rgba(17, 24, 39, 0.55);
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.86);
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 35%;
+  z-index: 10;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.94), rgba(2, 132, 199, 0.9));
+  clip-path: polygon(0 54%, 15% 74%, 34% 62%, 51% 86%, 76% 63%, 100% 72%, 100% 100%, 0 100%);
+}
+
+main {
+  animation: floatIn 560ms ease-out;
+}
+
+@media (max-width: 768px) {
+  .hero-wave {
+    height: 30%;
+    clip-path: polygon(0 58%, 16% 76%, 35% 64%, 53% 84%, 76% 66%, 100% 74%, 100% 100%, 0 100%);
+  }
+}
