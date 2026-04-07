@@ -301,7 +301,7 @@ export default function Home() {
 
             <div className="absolute inset-0">
               <Image
-                src="/calendar-hero.png"
+                src="/hero.png"
                 alt="Climber on snowy mountain"
                 fill
                 priority
